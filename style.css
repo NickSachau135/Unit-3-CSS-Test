@@ -69,7 +69,7 @@ body {
     box-shadow: var(--Shadow) 10px 10px 25px, var(--Shadow) -10px 10px 25px;
 }
 
-body header {
+body>header {
     background: white;
     width: 100%;
 }
@@ -77,7 +77,7 @@ body header {
 /*Typogrphy Styles*/
 
 
-img .logoimage{
+img#logoimage{
     display: block;
     width: 100%;
     max-width: 600px;
@@ -90,11 +90,11 @@ p {
     margin: 15px;
 }
 
-.top li {
+.top ul li {
     margin: 10px;
 }
 
-.top li a {
+.top ul li a {
     color: white;
     display: block;
     font-size: 1.2rem;
@@ -102,7 +102,7 @@ p {
     padding: 5% 0%;
 }
 
-.top li a:hover {
+.top ul li a:hover {
     color: var(--Nav-active);
     text-shadow: 0px 0px 2px black, 0px 0px 15px white;
 }
@@ -159,18 +159,22 @@ aside h1 {
 aside img {
     display: block;
     width: 30%;
-    margin: 5px auto 5px auto;
+    margin: 5px auto;
 }
 
 dl {
     text-align: center;
 }
 
+footer {
+    width: 100%;
+}
+
 dl dd {
     margin-bottom: 20px;
 }
 
-.bottom {
+#bottom {
     background-color: var(--Nav-active);
     color: var(--Text-color);
     padding: 15px;
@@ -180,7 +184,12 @@ dl dd {
     justify-content: center;
 }
 
-.bottom ul li {
+#bottom ul li {
+    font-size: 1rem;
+    line-height: 1.8rem;
+}
+
+#bottom ul a {
     color: white;
 }
 
@@ -193,9 +202,123 @@ footer p {
     padding: 10px 0px 10px 10px;
 }
 
-/*Unordered list in the navigation with the ID bottom 
-    Using flex values only
-        Make sure the item can shrink freely 
-        Make sure the item CANNOT grow
-        Make the item have a max width of 150px
-*/
+#bottom ul {
+    flex: 0 1 150px;
+}
+
+@media (max-width: 480px) {
+    body {
+        background-color: var(--Shadow);
+        color: var(--Text-background);
+    }
+
+    aside {
+        display: none;
+    }
+
+    article img  {
+        display: none;
+    }
+
+    .spotlight {
+        display: none;
+    }
+
+    .top ul {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .top ul li {
+        font-size: 2.2rem;
+        flex: 1 1 130px;
+    }
+
+    .top ul li a {
+        padding: 50% 0%;
+    }
+
+    .top ul li:nth-of-type(1) {
+        background-image: url(images/cw_image01.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .top ul li:nth-of-type(2) {
+        background-image: url(images/cw_image02.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .top ul li:nth-of-type(3) {
+        background-image: url(images/cw_image03.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .top ul li:nth-of-type(4) {
+        background-image: url(images/cw_image04.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .top ul li:nth-of-type(5) {
+        background-image: url(images/cw_image05.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .top ul li:nth-of-type(6) {
+        background-image: url(images/cw_image06.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #links {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+@media (min-width: 481px) {
+    body {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    article {
+        flex: 2 1 400px;
+    }
+
+    aside {
+        flex: 1 2 200px;
+    }
+
+    .top ul {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        background-color: var(--Shadow);
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .top ul li {
+        flex: 0 1 80px;
+    }
+
+    #links {
+        display: none;
+    }
+}
